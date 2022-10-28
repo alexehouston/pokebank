@@ -1,6 +1,10 @@
+* {
+  overflow: hidden;
+}
+
 body {
   padding: 50px;
-  font: 14px "Arial", Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 #nav {
@@ -20,4 +24,24 @@ a {
 #google {
   width: 25px;
   height: auto;
+}
+
+.main {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/003/428/298/non_2x/abstract-3d-fluid-holographic-gradient-shape-background-vector.jpg');
+  background-position: center;
+  border-radius: 10px;
+  height: 50vh;
+  width: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.pokemon img {
+  transform: scale(0.45, 0.45);
+  margin-top: -32vmin;
+  float: right;
 }
