@@ -1,47 +1,70 @@
 * {
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
 }
 
 body {
-  padding: 50px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  color: white;
+  font-size: 1.6rem;
+  background-color: #1D2026;
+  overflow: hidden;
 }
 
-#nav {
-  margin-top: 5vmin;
-  text-align: center;
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  height: 100vh;
 }
-#nav ul{
+
+h1 {
+  font-size: 5rem;
+}
+.blue {
+  color: #2196f3;
+}
+.welcome {
+  margin: auto;
+  width: 100vw;
+  padding-left: 30rem;
+}
+
+p {
+  margin-top: 1rem;
+  color: #aaa;
+}
+
+.login {
+  color: #222;
+  background: #fff;
+  border: solid 1px #eee;
+  border-radius: 50px;
+  padding: 1.5rem;
   display: flex;
-  justify-content: space-around;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
-
-#google {
-  width: 25px;
-  height: auto;
-}
-
-.main {
-  background-image: url('https://static.vecteezy.com/system/resources/previews/003/428/298/non_2x/abstract-3d-fluid-holographic-gradient-shape-background-vector.jpg');
-  background-position: center;
-  border-radius: 10px;
-  height: 50vh;
-  width: 100vh;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  opacity: 50%;
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  text-decoration: none;
+  width: 38rem;
+  margin-top: 2rem;
+}
+
+.login img {
+  width: 3rem;
+  margin-right: 1rem;
+}
+
+.pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .pokemon img {
-  transform: scale(0.45, 0.45);
-  margin-top: -32vmin;
-  float: right;
+  width: 70rem;
 }

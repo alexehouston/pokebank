@@ -1,0 +1,13 @@
+<nav>
+    <ul>
+      <a href="">HOME</a>
+      <% if (user) { %>
+        <a href="">ACCOUNT</a>
+        <a href="">POKÉDEX</a>
+        <a href="">GAMES</a>
+        <a href="/logout">LOG OUT</a>
+      <% } else { %>
+        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google"></a>
+      <% } %>
+    </ul>
+  </nav>
