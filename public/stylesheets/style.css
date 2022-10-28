@@ -1,8 +1,23 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Arial", Helvetica, sans-serif;
+}
+
+#nav {
+  margin-top: 5vmin;
+  text-align: center;
+}
+#nav ul{
+  display: flex;
+  justify-content: space-around;
 }
 
 a {
-  color: #00B7FF;
+  color: black;
+  text-decoration: none;
+}
+
+#google {
+  width: 25px;
+  height: auto;
 }
