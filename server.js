@@ -12,7 +12,7 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var accountsRouter = require('./routes/accounts');
+var pokedexRouter = require('./routes/pokedex');
 
 var app = express();
 app.use(session({ secret: 'x' }));
@@ -41,7 +41,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/account', accountsRouter);
+app.use('/pokedex', pokedexRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

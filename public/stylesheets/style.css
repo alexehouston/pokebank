@@ -1,42 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  line-height: 1.6;
-  color: white;
-  font-size: 1.6rem;
   background-color: #1D2026;
+  font-size: 1.6vmin;
   overflow: hidden;
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
+  position: fixed;
   height: 100vh;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 4vmin;
+  color: white;
 }
+
 .blue {
   color: #2196f3;
 }
-.welcome {
-  margin: auto;
-  width: 100vw;
-  padding-left: 30rem;
+
+h2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 3vmin;
+  font-weight: 700;
+  color: lightgreen;
+  letter-spacing: 3vmin;
+  margin-top: 10vmin;
 }
 
 p {
-  margin-top: 1rem;
+  margin-top: 1vmin;
   color: #aaa;
+}
+
+.welcome, .pokemon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcome {
+  padding-left: 25vmin;
+  width: 100vw;
 }
 
 .login {
@@ -44,27 +63,120 @@ p {
   background: #fff;
   border: solid 1px #eee;
   border-radius: 50px;
-  padding: 1.5rem;
+  padding: 1.5vmin;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   text-decoration: none;
-  width: 38rem;
-  margin-top: 2rem;
+  width: 38vmin;
+  cursor: pointer;
 }
 
 .login img {
-  width: 3rem;
-  margin-right: 1rem;
+  width: 3vmin;
+  margin-right: 1vmin;
 }
 
 .pokemon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 75vmin;
+  max-width: 90%;
 }
 
-.pokemon img {
-  width: 70rem;
+/* nav bar */
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a {
+  text-decoration: none;
+  color: white;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: #2196f3;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: 
+    transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: none;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+  transform: none;
 }

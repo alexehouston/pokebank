@@ -1,13 +1,13 @@
-<nav>
-    <ul>
-      <a href="">HOME</a>
-      <% if (user) { %>
-        <a href="">ACCOUNT</a>
-        <a href="">POKÉDEX</a>
-        <a href="">GAMES</a>
-        <a href="/logout">LOG OUT</a>
-      <% } else { %>
-        <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png" id="google"></a>
-      <% } %>
-    </ul>
+<nav role="navigation">
+    <div id="menuToggle">
+      <input type="checkbox" />
+      <span></span>
+      <span></span>
+      <span></span>
+      <ul id="menu">
+        <a href=""><li>Pokédex</li></a>
+        <a href=""><li>Games</li></a>
+        <a href="/logout"><li>Log Out</li></a>
+       </ul>
+    </div>
   </nav>
