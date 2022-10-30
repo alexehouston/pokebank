@@ -47,6 +47,24 @@ p {
   color: #aaa;
 }
 
+.gen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 5vmin 20vmin 0 20vmin;
+  color: white;
+  
+}
+
+.pokedex {
+  display: grid;
+  grid-template-columns: repeat(6, 15vw);
+  background-color:white;
+  margin: 10vmin 20vmin 0 20vmin;
+  padding: 5vmin;
+}
+
 .welcome, .pokemon {
   display: flex;
   flex-direction: column;

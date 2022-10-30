@@ -1,7 +1,7 @@
 const Account = require('../models/pokedex');
 
 module.exports = {
-    index
+    index,
   };
 
   function index(req, res) {
