@@ -12,7 +12,7 @@ router.get('/auth/google', passport.authenticate(
 ));
 
 router.get('/oauth2callback', passport.authenticate(
-  'google', { successRedirect: '/pokedex', failureRedirect: '/' }
+  'google', { successRedirect: '/games', failureRedirect: '/' }
 ));
 
 router.get('/logout', function(req, res) {

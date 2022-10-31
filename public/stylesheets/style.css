@@ -116,7 +116,6 @@ p {
 #menuToggle a {
   text-decoration: none;
   color: white;
-  
   transition: color 0.3s ease;
 }
 

@@ -12,7 +12,8 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-var pokedexRouter = require('./routes/pokedex');
+var gamesRouter = require('./routes/games');
+var pokemonRouter = require('./routes/pokemon');
 
 var app = express();
 app.use(session({ secret: 'x' }));
@@ -32,6 +33,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -41,7 +43,8 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-app.use('/pokedex', pokedexRouter);
+app.use('/games', gamesRouter);
+app.use('/pokedex', pokemonRouter);
 
 
 app.use(function(req, res, next) {

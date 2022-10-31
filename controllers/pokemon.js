@@ -1,4 +1,4 @@
-const Account = require('../models/pokedex');
+const Pokedex = require('../models/pokemon');
 
 module.exports = {
     index,
@@ -6,7 +6,7 @@ module.exports = {
 
   function index(req, res) {
     console.log('err');
-    Account.find({}, function(err, pokedex) {
+    Pokedex.find({}, function(err, pokedex) {
       res.render('pokedex/index', { title: 'Pokédex', pokedex });
     });
   }
