@@ -9,13 +9,13 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #1D2026;
   font-size: 1.6vmin;
   overflow: hidden;
 }
 
-.container {
+.container, .error {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
   position: fixed;
@@ -40,6 +40,16 @@ h2 {
   color: lightgreen;
   letter-spacing: 3vmin;
   margin-top: 10vmin;
+  text-transform: uppercase;
+}
+
+h3 {
+
+}
+
+h4 {
+  font-size: 8vmin;
+  color: white;
 }
 
 p {
@@ -65,13 +75,13 @@ p {
   padding: 5vmin;
 }
 
-.welcome, .pokemon {
+.welcome, .pokemon, .errormsg, .ghost {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.welcome {
+.welcome, .errormsg {
   padding-left: 25vmin;
   width: 100vw;
 }
@@ -96,7 +106,7 @@ p {
   margin-right: 1vmin;
 }
 
-.pokemon {
+.pokemon, .ghost {
   width: 75vmin;
   max-width: 90%;
 }

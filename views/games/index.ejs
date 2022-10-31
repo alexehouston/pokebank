@@ -1,0 +1,62 @@
+<%- include('../partials/header') %>
+
+<%- include('../partials/nav') %>
+
+<h2>GAMES</h2>
+
+<div class="games">
+<% if (games.length) { %>
+    <% games.forEach(function(g) { %>
+        <a href="/games/<%= g._id %>"><%= g.title %></a>
+<% }); %>
+
+<% } else { %>
+    <h3>No Games Yet</h3>
+<% } %>
+</div>
+
+<h3>Add Game</h3>
+<form action="/games" method="POST">
+  <label>title:
+    <select name="title">
+        <option disabled selected value></option>
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Gold">Gold</option>
+        <option value="Silver">Silver</option>
+        <option value="Crystal">Crystal</option>
+        <option value="Ruby">Ruby</option>
+        <option value="Sapphire">Sapphire</option>
+        <option value="Fire Red">Fire Red</option>
+        <option value="Leaf Green">Leaf Green</option>
+        <option value="Emerald">Emerald</option>
+        <option value="Diamond">Diamond</option>
+        <option value="Pearl">Pearl</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Heart Gold">Heart Gold</option>
+        <option value="Soul Silver">Soul Silver</option>
+        <option value="Black">Black</option>
+        <option value="White">White</option>
+        <option value="Black 2">Black 2</option>
+        <option value="White 2">White 2</option>
+        <option value="X">X</option>
+        <option value="Y">Y</option>
+        <option value="Omega Ruby">Omega Ruby</option>
+        <option value="Alpha Sapphire">Alpha Sapphire</option>
+        <option value="Sun">Sun</option>
+        <option value="Moon">Moon</option>
+        <option value="Ultra Sun">Ultra Sun</option>
+        <option value="Ultra Moon">Ultra Moon</option>
+        <option value="Sword">Sword</option>
+        <option value="Shield">Shield</option>
+        <option value="Brilliant Diamond">Brilliant Diamond</option>
+        <option value="Shining Pearl">Shining Pearl</option>
+        <option value="Scarlet">Scarlet</option>
+        <option value="Violet">Violet</option>
+    </select>
+  </label><br><br>
+  <button type="submit">Add Game</button>
+</form>
+
+<%- include('../partials/footer') %>

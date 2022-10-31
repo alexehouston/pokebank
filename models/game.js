@@ -6,10 +6,11 @@ const teamSchema = new Schema({
 });
 
 const gameSchema = new Schema({
-  name: {
+  title: {
     type: String,
-    enum: ['Red', 'Blue', 'Yellow', 'Gold', 'Silver', 'Crystal', 'Ruby', 'Sapphire', 'Fire Red', 'Leaf Green', 'Emerald', 'Diamond', 'Pearl', 'Platinum', 'Heart Gold', 'Soul Silver', 'Black', 'White', 'Black 2', 'White 2', 'X', 'Y', 'Omega Ruby', 'Alpha Sapphire', 'Sun', 'Moon', 'Ultra Sun', 'Ultra Moon', 'Sword', 'Shield', 'Brilliant Diamond', 'Shining Pearl', 'Scarlet', 'Violet']
-  },
+    enum: ['Red', 'Blue', 'Yellow', 'Gold', 'Silver', 'Crystal', 'Ruby', 'Sapphire', 'Fire Red', 'Leaf Green', 'Emerald', 'Diamond', 'Pearl', 'Platinum', 'Heart Gold', 'Soul Silver', 'Black', 'White', 'Black 2', 'White 2', 'X', 'Y', 'Omega Ruby', 'Alpha Sapphire', 'Sun', 'Moon', 'Ultra Sun', 'Ultra Moon', 'Sword', 'Shield', 'Brilliant Diamond', 'Shining Pearl', 'Scarlet', 'Violet'],
+    required: true
+},
   caught: [{
     type: Schema.Types.ObjectId,
     ref: 'Pokemon'

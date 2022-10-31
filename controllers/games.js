@@ -4,21 +4,31 @@ const Pokemon = require('../models/pokemon');
 module.exports = {
     index,
     show,
-    new: newGame,
     create
 }
 
-function index() {
-
+function index(req, res) {
+    Game.find({}, function(err, games) {
+      res.render('games/index', { title: 'All Games', games });
+    });
 }
 
-function show() {
-}
+function show(req, res) {
+    Game.findById(req.params.id, function(err, game) {
+      Pokemon.find({game: game._id}, function(err, pokemon) {
+      res.render('games/show', { title: 'Game Details', game, pokemon });
+      });
+    });
+  }
 
-function newGame() {
-    res.render('games/new', {title: 'Add Game'});
-}
-
-function create() {
-    
-}
+function create(req, res) {
+    for (let key in req.body) {
+      if (req.body[key] === '') delete req.body[key];
+    }
+    const game = new Game(req.body);
+    game.save(function(err) {
+      if (err) return res.redirect('/games/new');
+      console.log(game);
+      res.redirect('/games');
+    });
+  }

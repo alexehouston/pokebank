@@ -12,6 +12,10 @@ const pokemonSchema = new Schema({
   },
   nickname: {
     type: String
+  },
+  game: {
+    type: Schema.Types.ObjectId,
+    ref: 'Game'
   }
 });
 
