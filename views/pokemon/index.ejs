@@ -2,18 +2,19 @@
 
 <%- include('../partials/nav') %>
 
-<h3>Poke Data Page</h3>
+<h2><%= pokeData.name %></h2>
 
 <div class="pokeId">
-    <form>
-        <%= pokeData.id %>
-        <%= pokeData.name %>
+    <form action="/games/<%= gameId %>/pokemon" method="POST">
+       <p class="id"><%= pokeData.id %></p>
         <img src="<%= pokeData.sprites.other.home.front_default %>">
 
-        <input type="hidden" name="id" value="<%= pokeData.id %>">
+        <input type="hidden" name="pokeId" value="<%= pokeData.id %>">
         <input type="hidden" name="name" value="<%= pokeData.name %>">
         <input type="hidden" name="image" value="<%= pokeData.sprites.other.home.front_default %>">
+    <button class="submit" type="submit"><p class="btnicons">add</p></button>
     </form>
+    <a href="javascript:history.back()" class="btnicons">undo</p>
 </div>
 
 <%- include('../partials/footer') %>

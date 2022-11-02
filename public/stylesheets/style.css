@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
 * {
   box-sizing: border-box;
@@ -36,18 +36,17 @@ h2, h3 {
 }
 
 h2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 3vmin;
-  font-weight: 700;
+  text-align: center;
+  font-weight: 100;
   color: lightgreen;
+  font-size: 45px;
   letter-spacing: 3vmin;
   margin-top: 10vmin;
 }
 
 h3 {
-  font-size: 2vmin;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 h4 {
@@ -64,22 +63,53 @@ a {
   text-decoration: none;
 }
 
-.games {
-  font-weight: 700;
+.games, .caught, .teams {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: auto;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
   line-height: 6vmin;
-  font-size: 3vmin;
+  font-size: 2vmin;
   text-align: center;
 }
 
-.games, .addgame, .caught, .teams, .addpokemon, .addteam {
+.games:hover {
+  color: #2196f3;
+}
+
+.teams, .addpokemon {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 8vmin;
+}
+
+.caught {
+  display: grid;
+  grid-template-columns: repeat(6, 15vw);
+  justify-content: center;
+}
+
+.caught img {
+  width: 75%;
+}
+
+.addgame {
+  position: absolute;
+  text-align: center;
+  bottom: 5%;
+  left: 48%;
+}
+
+.addpokemon, .addteam {
+  position: absolute;
+  text-align: center;
+  bottom: 15%;
+  left: 48%;
 }
 
 .gen {
@@ -104,6 +134,39 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.delete {
+  position: absolute;
+  bottom: 5%;
+  left: 48%
+}
+
+input, button {
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+
+input {
+  width: 250px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: tomato;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.btnicons {
+  font-family: 'Material Icons';
+  font-size: 25px;
+  color: white;
 }
 
 .welcome, .errormsg {
@@ -144,7 +207,7 @@ a {
 .pokebank {
   text-align: center;
   top: 25%;
-  left: 41.5ç%;
+  left: 41.5%;
 }
 
 .home {
@@ -152,16 +215,22 @@ a {
   left: 22.5%;
 }
 
+.id {
+  font-size: 250px;
+  font-weight: 100;
+  text-align: center;
+  display: inline-block;
+}
+
 .pokeId {
-  background-image: url('https://i.imgur.com/c2TQoyL.jpg');
-  background-position: center;
+  background-image: url('https://i.imgur.com/LN1ezpL.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  display: flex;/52Qsjbe.png
+  background-position: center;
+  background-size: 50%;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 15vmin;
   height: 60vmin;
   border-radius: 10%;
   padding: 0;
@@ -184,12 +253,12 @@ a {
   font-size: 40px;
 }
 
-.menu, .menu input, .hamburger, .navitems span {
+.menu input, .hamburger, .navitems span {
   position: absolute;
 }
 
 .menu {
-  margin-top: 2vmin;
+  margin-top: 5vmin;
   width: 100vw;
 }
 

@@ -3,8 +3,8 @@ var router = express.Router();
 var pokemonCtrl = require('../controllers/pokemon');
 var ensureLoggedIn = require('../config/ensureLoggedIn');
 
-router.get('/:id/games', pokemonCtrl.getPokemon);
-// router.post('/games/:id', ensureLoggedIn, pokemonCtrl.create);
-// router.post('/games/:id/pokemon', ensureLoggedIn, pokemonCtrl.addToTeam);
+router.get('/games/:id/pokemon', pokemonCtrl.getPokemon);
+router.get('/pokemon/:id', pokemonCtrl.show);
+router.post('/games/:id/pokemon', ensureLoggedIn, pokemonCtrl.create);
 
 module.exports = router;

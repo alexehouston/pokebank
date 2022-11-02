@@ -9,15 +9,9 @@ const pokemonSchema = new Schema({
   name: {
     type: String
   },
-  type: {
-    type: String
-  },
   image: {
-    type: String
-  },
-  nickname: {
     type: String
   }
 });
 
-module.exports = mongoose.model('Pokémon', pokemonSchema);
+module.exports = mongoose.model('Pokemon', pokemonSchema);

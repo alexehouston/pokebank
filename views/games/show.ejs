@@ -5,35 +5,38 @@
 <h2><%= game.title %></h2>
 
 <div class="caught">
-    <% if (pokemon.length) { %>
-        <% pokemon.forEach(function(p) { %>
-            <a href="/pokemon/<%= p._id %>"><%= p.name %></a>
+    <% if (game.caught.length) { %>
+        <% game.caught.forEach(function(p) { %>
+            <a href="/pokemon/<%= p._id %>"><img src="<%= p.image %>"></a>
     <% }); %>
     
     <% } else { %>
         <h3>No Pokémon Yet</h3>
     <% } %>
+
+    <div class="add">
+        <div class="addpokemon">
+            <form action="/games/<%= game._id %>/pokemon" method="GET">
+                    <input type="text" name="pokemon" class="form-control" placeholder="Enter a Pokémon Name" required>
+                    <button class="submit" type="submit"><p class="btnicons">catching_pokemon</p></button>
+            </form>
+        </div>
 </div>
 
-<div class="addpokemon">
-    <form action="/pokemon/<%= game._id %>/games" method="GET">
-            <input type="text" name="pokemon" class="form-control" placeholder="Enter a Pokémon Name" required>
-            <button class="submit" type="submit">Add Pokémon</button>
-    </form>
-</div>
 
-<div class="teams">
-    <% if (game.teams.length) { %>
-        <% teams.forEach(function(t) { %>
-            <a href="/teams/<%= t._id %>"><%= t.name %></a>
-    <% }); %>
-    
-    <% } else { %>
-        <h3>No Teams Yet</h3>
-    <% } %>
-</div>
+    <!-- <div class="teams">
+        <% if (game.teams.length) { %>
+            <% teams.forEach(function(t) { %>
+                <a href="/teams/<%= t._id %>"><%= t.name %></a>
+        <% }); %>
+        
+        <% } else { %>
+            <h3>No Teams Yet</h3>
+        <% } %>
+    </div>
+</div> -->
 
-<div class="addteams">
+<!-- <div class="addteam">
     <h3>Add A Team</h3>
     <form action="/games/<%= game._id %>" method="POST">
         <label>Name:
@@ -51,7 +54,7 @@
         </label>
         <button type="submit">Add Pokémon</button>
     </form>
-    </div>
+</div> -->
 
 <div class="delete">
     <form action="/games/<%= game._id %>?_method=DELETE" method="POST">

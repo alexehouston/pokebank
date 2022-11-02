@@ -14,12 +14,9 @@ function index(req, res) {
     });
 }
 
-function show(req, res) {
-    Game.findById(req.params.id, function(err, game) {
-      Pokemon.find({game: game._id}, function(err, pokemon) {
-      res.render('games/show', { title: 'Game Details', game, pokemon });
-      });
-    });
+async function show(req, res) {
+    let game = await Game.findById(req.params.id).populate('caught').exec();
+      res.render('games/show', { title: 'Game Details', game });
 }
 
 function deleteGame(req, res, next) {
