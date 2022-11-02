@@ -131,12 +131,33 @@ a {
   margin-right: 1vmin;
 }
 
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pokebank, .home {
+  position: absolute;
+}
+
+.pokebank {
+  text-align: center;
+  top: 25%;
+  left: 41.5ç%;
+}
+
+.home {
+  bottom: 5%;
+  left: 22.5%;
+}
+
 .pokeId {
   background-image: url('https://i.imgur.com/c2TQoyL.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  display: flex;
+  display: flex;/52Qsjbe.png
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -160,83 +181,76 @@ a {
 .icons {
   font-family: 'Material Icons';
   color: white;
-  font-size: 2vmin;
+  font-size: 40px;
+}
+
+.menu, .menu input, .hamburger, .navitems span {
+  position: absolute;
 }
 
 .menu {
-  position:absolute;
-  width:575px;
-  height:200px;
+  margin-top: 2vmin;
+  width: 100vw;
 }
 
 .menu input {
-  position:absolute;
-  left:50%;
-  width:80px;
-  height:80px;
-  z-index:20;
-  border-radius: 80px;
-  opacity:0;
-  cursor:pointer;
+  left: 47.5%;
+  width: 80px;
+  height: 80px;
+  z-index: 20;
+  opacity: 0;
+  cursor: pointer;
 }
 
 .hamburger {
-  position:absolute;
-  left:50%;
-  border-radius:100%;
-  z-index:10;
-  cursor:pointer;
+  margin-top: -8px;
+  left: 47.5%;
+  z-index: 10;
+  cursor: pointer;
 }
 
-.menu input:checked {
-  top:20px;
-  height:60px;
-  transform-origin:top;
-  transform:rotate(-45deg);
-  transition: all .3s ease-in-out;
+.hamburger img {
+  width: 120px;
 }
 
 .navbar {
-  position:absolute;
-  top:4.5%;
-  left:25%;
-  width:380px;
-  height:60px;
+  margin: auto;
+  width: 600px;
+  height: 100px;
   background-color: tomato;
-  border-radius:60px;
+  border-radius: 60px;
   box-shadow: 0px 0px 20px #F19181;
-  z-index:5;
-  transform:scaleX(1);
+  z-index: 5;
+  transform: scaleX(1);
   transition: all .3s ease-in-out;
 }
 
 .menu input:checked ~ .navbar {
-  transform:scaleX(0);
+  transform: scaleX(0);
 }
 
 .navitems span {
-  position: absolute;
-  top: 8%;
-  width:20px;
-  padding-left:35px;
+  top: 15%;
+  width: 20px;
+  padding-left: 35px;
   transition: all .2s ease-in-out;
-  cursor:pointer; 
+  cursor: pointer; 
 }
 
 .item1 {
-  left:0%;
+  left: 2%;
 }
 
 .item2 {
-  left:15%;
+  left: 19%;
 }
 
 .item3 {
-  left:60%;
+  left: 61%;
 }
 
 .item4 {
-  left:75%;
+  left: 81%;
 }
 
 .menu input:checked ~ .navbar .navitems .item1 {
