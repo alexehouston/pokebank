@@ -4,14 +4,16 @@
 
 <h3>Poke Data Page</h3>
 
-<form>
-    <%= pokeData.id %>
-    <%= pokeData.name %>
-    <img src="<%= pokeData.sprites.other.home.front_default %>">
+<div class="pokeId">
+    <form>
+        <%= pokeData.id %>
+        <%= pokeData.name %>
+        <img src="<%= pokeData.sprites.other.home.front_default %>">
 
-    <input type="hidden" name="id" value="<%= pokeData.id %>">
-    <input type="hidden" name="name" value="<%= pokeData.name %>">
-    <input type="hidden" name="image" value="<%= pokeData.sprites.other.home.front_default %>">
-</form>
+        <input type="hidden" name="id" value="<%= pokeData.id %>">
+        <input type="hidden" name="name" value="<%= pokeData.name %>">
+        <input type="hidden" name="image" value="<%= pokeData.sprites.other.home.front_default %>">
+    </form>
+</div>
 
 <%- include('../partials/footer') %>

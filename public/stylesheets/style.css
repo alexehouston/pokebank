@@ -60,6 +60,10 @@ p {
   color: #aaa;
 }
 
+a {
+  text-decoration: none;
+}
+
 .games {
   font-weight: 700;
   text-decoration: none;
@@ -127,6 +131,21 @@ p {
   margin-right: 1vmin;
 }
 
+.pokeId {
+  background-image: url('https://i.imgur.com/c2TQoyL.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15vmin;
+  height: 60vmin;
+  border-radius: 10%;
+  padding: 0;
+}
+
 .pokemon, .ghost {
   width: 75vmin;
   max-width: 90%;
@@ -136,19 +155,108 @@ p {
   animation: floating 3s ease-in-out infinite;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-	background: white;
-	margin: 5vmin;
-	border-radius: 30px;
-  padding: 1vmin;
+/* nav bar */
+
+.icons {
+  font-family: 'Material Icons';
+  color: white;
+  font-size: 2vmin;
 }
 
-#navimg {
-  width: 10vmin;
-  padding: 20px;
+.menu {
+  position:absolute;
+  width:575px;
+  height:200px;
+}
+
+.menu input {
+  position:absolute;
+  left:50%;
+  width:80px;
+  height:80px;
+  z-index:20;
+  border-radius: 80px;
+  opacity:0;
+  cursor:pointer;
+}
+
+.hamburger {
+  position:absolute;
+  left:50%;
+  border-radius:100%;
+  z-index:10;
+  cursor:pointer;
+}
+
+.menu input:checked {
+  top:20px;
+  height:60px;
+  transform-origin:top;
+  transform:rotate(-45deg);
+  transition: all .3s ease-in-out;
+}
+
+.navbar {
+  position:absolute;
+  top:4.5%;
+  left:25%;
+  width:380px;
+  height:60px;
+  background-color: tomato;
+  border-radius:60px;
+  box-shadow: 0px 0px 20px #F19181;
+  z-index:5;
+  transform:scaleX(1);
+  transition: all .3s ease-in-out;
+}
+
+.menu input:checked ~ .navbar {
+  transform:scaleX(0);
+}
+
+.navitems span {
+  position: absolute;
+  top: 8%;
+  width:20px;
+  padding-left:35px;
+  transition: all .2s ease-in-out;
+  cursor:pointer; 
+}
+
+.item1 {
+  left:0%;
+}
+
+.item2 {
+  left:15%;
+}
+
+.item3 {
+  left:60%;
+}
+
+.item4 {
+  left:75%;
+}
+
+.menu input:checked ~ .navbar .navitems .item1 {
+    opacity:1;
+  transition-delay:.45s;
+}
+
+.menu input:checked ~ .navbar .navitems .item2 {
+    opacity:1;
+  transition-delay:.40s;
+}
+
+.menu input:checked ~ .navbar .navitems .item3 {
+    opacity:1;
+  transition-delay:.40s;
+}
+
+.menu input:checked ~ .navbar .navitems .item4 {
+    opacity:1;
+  transition-delay:.45s;
 }
 
 /* animations */
