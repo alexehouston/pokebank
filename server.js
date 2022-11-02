@@ -14,6 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var gamesRouter = require('./routes/games');
 var pokemonRouter = require('./routes/pokemon');
+var teamsRouter = require('./routes/teams')
 
 var app = express();
 app.use(session({ secret: 'x' }));
@@ -44,7 +45,8 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/games', gamesRouter);
-app.use('/pokedex', pokemonRouter);
+app.use('/pokemon', pokemonRouter);
+app.use('/teams', teamsRouter);
 
 
 app.use(function(req, res, next) {

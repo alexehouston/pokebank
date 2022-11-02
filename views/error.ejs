@@ -1,13 +1,17 @@
-<%- include('./partials/header') %>
+<!-- <%- include('./partials/header') %>
 
     <div class="error">
         <div class="errormsg">
             <h4>Uh Oh<span class="blue">!</span></h4>
-            <p>Looks like we can't find the page you're looking for. Better luck next time!</p>
+            <p>Looks like we can't find the page you're looking for.</p>
         </div>
         <div class="ghost">
             <img src="https://i.imgur.com/xrXiZMd.png">
         </div>
     </div>
 
-<%- include('./partials/footer') %>
+<%- include('./partials/footer') %> -->
+
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>

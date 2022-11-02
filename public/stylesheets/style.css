@@ -12,7 +12,6 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #1D2026;
   font-size: 1.6vmin;
-  overflow: hidden;
 }
 
 .container, .error {
@@ -31,6 +30,11 @@ h1 {
   color: #2196f3;
 }
 
+h2, h3 {
+  text-transform: uppercase;
+  color: white;
+}
+
 h2 {
   display: flex;
   flex-direction: row;
@@ -40,11 +44,10 @@ h2 {
   color: lightgreen;
   letter-spacing: 3vmin;
   margin-top: 10vmin;
-  text-transform: uppercase;
 }
 
 h3 {
-
+  font-size: 2vmin;
 }
 
 h4 {
@@ -55,6 +58,24 @@ h4 {
 p {
   margin-top: 1vmin;
   color: #aaa;
+}
+
+.games {
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  line-height: 6vmin;
+  font-size: 3vmin;
+  text-align: center;
+}
+
+.games, .addgame, .caught, .teams, .addpokemon, .addteam {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vmin;
 }
 
 .gen {
@@ -111,99 +132,29 @@ p {
   max-width: 90%;
 }
 
-/* nav bar */
-
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-  z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
+.ghost {
+  animation: floating 3s ease-in-out infinite;
 }
 
-#menuToggle a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	background: white;
+	margin: 5vmin;
+	border-radius: 30px;
+  padding: 1vmin;
 }
 
-#menuToggle a:hover {
-  color: #2196f3;
+#navimg {
+  width: 10vmin;
+  padding: 20px;
 }
 
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-  -webkit-touch-callout: none;
-}
+/* animations */
 
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  background: white;
-  border-radius: 3px;
-  z-index: 1;
-  transform-origin: 4px 0px;
-  transition: 
-    transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-    opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: white;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
-  position: absolute;
-  width: 300px;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-  background: none;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-
-#menu li {
-  padding: 10px 0;
-  font-size: 22px;
-}
-
-#menuToggle input:checked ~ ul {
-  transform: none;
+@keyframes floating {
+  0% { transform: translate(0, 0px); }
+  50% { transform: translate(0, 25px); }
+  100% { transform: translate(0, -0px); }   
 }

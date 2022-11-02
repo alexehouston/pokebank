@@ -4,7 +4,8 @@ const Pokemon = require('../models/pokemon');
 module.exports = {
     index,
     show,
-    create
+    create,
+    delete: deleteGame
 }
 
 function index(req, res) {
@@ -19,7 +20,14 @@ function show(req, res) {
       res.render('games/show', { title: 'Game Details', game, pokemon });
       });
     });
-  }
+}
+
+function deleteGame(req, res, next) {
+    Game.deleteOne({_id: req.params.id}, function(err, game) {
+      if (err) return res.redirect('/games');
+        res.redirect('/games');
+      });
+}
 
 function create(req, res) {
     for (let key in req.body) {
@@ -27,8 +35,7 @@ function create(req, res) {
     }
     const game = new Game(req.body);
     game.save(function(err) {
-      if (err) return res.redirect('/games/new');
-      console.log(game);
+      if (err) return res.redirect('/games');
       res.redirect('/games');
     });
   }

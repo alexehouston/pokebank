@@ -7,7 +7,7 @@
 <div class="games">
 <% if (games.length) { %>
     <% games.forEach(function(g) { %>
-        <a href="/games/<%= g._id %>"><%= g.title %></a>
+        <a href="/games/<%= g._id %>" class="games"><%= g.title %></a>
 <% }); %>
 
 <% } else { %>
@@ -15,6 +15,7 @@
 <% } %>
 </div>
 
+<div class="addgame">
 <h3>Add Game</h3>
 <form action="/games" method="POST">
   <label>title:
@@ -58,5 +59,6 @@
   </label><br><br>
   <button type="submit">Add Game</button>
 </form>
+</div>
 
 <%- include('../partials/footer') %>

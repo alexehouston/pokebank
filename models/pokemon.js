@@ -3,19 +3,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const pokemonSchema = new Schema({
+  pokeId: {
+    type: Number
+  },
   name: {
     type: String
   },
   type: {
-    type: String,
-    enum: ['Bug', 'Dark', 'Dragon', 'Electric', 'Fairy', 'Fighting', 'Fire', 'Flying', 'Ghost', 'Grass', 'Ground', 'Ice', 'Normal', 'Poison', 'Psychic', 'Rock', 'Steel', 'Water']
+    type: String
+  },
+  image: {
+    type: String
   },
   nickname: {
     type: String
-  },
-  game: {
-    type: Schema.Types.ObjectId,
-    ref: 'Game'
   }
 });
 

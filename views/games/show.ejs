@@ -15,41 +15,12 @@
     <% } %>
 </div>
 
-<h3>Add Pokémon</h3>
-<form action="/games" method="POST">
-    <label>Name:
-        <select name="name">
-            <option disabled selected value></option>
-        </select>
-    </label>
-    <label>Type:
-        <select name="type">
-            <option disabled selected value></option>
-            <option value="Bug">Bug</option>
-            <option value="Dark">Dark</option>
-            <option value="Dragon">Dragon</option>
-            <option value="Electric">Electric</option>
-            <option value="Fairy">Fairy</option>
-            <option value="Fighting">Fighting</option>
-            <option value="Fire">Fire</option>
-            <option value="Flying">Flying</option>
-            <option value="Ghost">Ghost</option>
-            <option value="Grass">Grass</option>
-            <option value="Ground">Ground</option>
-            <option value="Ice">Ice</option>
-            <option value="Normal">Normal</option>
-            <option value="Poison">Poison</option>
-            <option value="Psychic">Psychic</option>
-            <option value="Rock">Rock</option>
-            <option value="Steel">Steel</option>
-            <option value="Water">Water</option>
-        </select>
-    </label>
-    <label>Nickname:
-        <input name="nickname" type="text">
-    </label>
-    <button type="submit">Add Pokémon</button>
-</form>
+<div class="addpokemon">
+    <form action="/pokemon/<%= game._id %>/games" method="GET">
+            <input type="text" name="pokemon" class="form-control" placeholder="Enter a Pokémon Name" required>
+            <button class="submit" type="submit">Add Pokémon</button>
+    </form>
+</div>
 
 <div class="teams">
     <% if (game.teams.length) { %>
@@ -60,6 +31,32 @@
     <% } else { %>
         <h3>No Teams Yet</h3>
     <% } %>
+</div>
+
+<div class="addteams">
+    <h3>Add A Team</h3>
+    <form action="/games/<%= game._id %>" method="POST">
+        <label>Name:
+            <select name="name">
+                <option disabled selected value></option>
+            </select>
+        </label>
+        <label>Type:
+            <select name="type">
+                <option disabled selected value></option>
+            </select>
+        </label>
+        <label>Nickname:
+            <input name="nickname" type="text">
+        </label>
+        <button type="submit">Add Pokémon</button>
+    </form>
+    </div>
+
+<div class="delete">
+    <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
+        <button type="submit">DELETE GAME</button>
+      </form>
 </div>
 
 <%- include('../partials/footer') %>
