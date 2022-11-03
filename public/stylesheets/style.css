@@ -17,11 +17,6 @@ body {
   animation-fill-mode: forwards;
 }
 
-h1 {
-  font-size: 4vmin;
-  color: white;
-}
-
 h2, h3 {
   text-transform: uppercase;
   color: white;
@@ -192,6 +187,12 @@ select {
 
 /* landing page */
 
+h1 {
+  font-size: 5vmin;
+  color: white;
+  letter-spacing: -1px;
+}
+
 .container, .error {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
@@ -206,6 +207,7 @@ select {
 
 .landingicon {
   font-family: 'Material Icons';
+  font-size: 45px;
   position: relative;
   top: 5px;
 }
