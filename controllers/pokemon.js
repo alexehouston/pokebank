@@ -7,6 +7,7 @@ module.exports = {
     index,
     show,
     getPokemon,
+    getPokedex,
     create
   };
 
@@ -19,20 +20,26 @@ function index(req, res) {
 function show(req, res) {
   Pokemon.findOne({_id:req.params.id}, function(err, pokeData) {
     res.render('pokemon/show', { title: 'Pokémon Details', pokeData });
-    console.log(pokeData);
   });
 }
 
 async function getPokemon(req, res, next) {
   const pokemon = req.query.pokemon.toLowerCase();
   try {
-    const data = await fetch(`${ROOT_URL}${pokemon}/`)
+    const data = await fetch(`${ROOT_URL}${pokemon}/`);
     const pokeData = await data.json();
     res.render('pokemon/index', { pokeData, gameId:req.params.id });
   } catch(err) {
     res.redirect(`/games/${req.params.id}`);
   }
 }
+
+async function getPokedex(req, res) {
+  let pokedex = Pokemon.find(req.params.id).populate('image').exec();
+    res.render('pokemon/pokedex', { title: 'Pokédex', pokedex });
+}
+
+
 
 async function create(req, res) {
   const poke = await Pokemon.exists({pokeId:req.body.pokeId})

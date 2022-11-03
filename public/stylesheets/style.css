@@ -12,6 +12,9 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #1D2026;
   font-size: 1.6vmin;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .container, .error {
@@ -24,6 +27,22 @@ body {
 h1 {
   font-size: 4vmin;
   color: white;
+}
+
+#home {
+  font-size: 6vmin;
+  height: 50%;
+}
+
+#hometext {
+  margin-top: -4vmin;
+}
+
+#pokeball {
+  position: absolute;
+  left: 33%;
+  top: 22%;
+  z-index: -5;
 }
 
 .blue {
@@ -63,24 +82,37 @@ a {
   text-decoration: none;
 }
 
-.games, .caught, .teams {
+.games {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  margin: auto;
-  font-weight: 600;
+  margin-top: 10vmin;
+  font-weight: 500;
   text-decoration: none;
   text-transform: uppercase;
-  color: white;
-  line-height: 6vmin;
+  line-height: 8vmin;
   font-size: 2vmin;
   text-align: center;
+  transition: all .2s ease-in-out;
 }
 
-.games:hover {
+#games {
+  color: white;
+}
+
+#games:hover {
   color: #2196f3;
+  font-weight: 700;
+  transform: scale(1.1); 
 }
 
-.teams, .addpokemon {
+#games:hover {
+  background-image: url('https://i.imgur.com/LN1ezpL.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10%;
+}
+
+.addpokemon {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,18 +122,23 @@ a {
 
 .caught {
   display: grid;
-  grid-template-columns: repeat(6, 15vw);
-  justify-content: center;
+  grid-template-columns: repeat(10, 10vw);
+  row-gap: 35px;
+  padding: 50px;
 }
 
 .caught img {
-  width: 75%;
+  transition: all .2s ease-in-out;
+  width: 50%;
+  padding: -2vmin;
+}
+
+.caught img:hover {
+  transform: scale(1.1);
 }
 
 .addgame {
-  position: absolute;
   text-align: center;
-  bottom: 5%;
   left: 48%;
 }
 
@@ -164,9 +201,30 @@ button:hover {
 }
 
 .btnicons {
+  margin-top: 5vmin;
   font-family: 'Material Icons';
-  font-size: 25px;
+  font-size: 50px;
   color: white;
+  letter-spacing: 50px;
+}
+
+.btnicons:hover {
+  color: #2196f3;
+  transition: all .2s ease-in-out;
+  transform: scale(1.2);
+}
+
+.btnicons2 {
+  font-family: 'Material Icons';
+  color: white;
+  font-size: 25px;
+}
+
+select {
+  font-family: 'Poppins';
+  width: 250px;
+  color: grey;
+  text-align: center;
 }
 
 .welcome, .errormsg {
@@ -211,29 +269,34 @@ button:hover {
 }
 
 .home {
-  bottom: 5%;
-  left: 22.5%;
+  bottom: 3%;
+  left: 23.5%;
 }
 
 .id {
-  font-size: 250px;
-  font-weight: 100;
   text-align: center;
-  display: inline-block;
+  font-size: 50px;
+  font-weight: 100;
+  opacity: 50%;
+  z-index: 10;
 }
 
 .pokeId {
   background-image: url('https://i.imgur.com/LN1ezpL.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 60vmin;
-  border-radius: 10%;
-  padding: 0;
+}
+
+.pokeform {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .pokemon, .ghost {
@@ -348,4 +411,13 @@ button:hover {
   0% { transform: translate(0, 0px); }
   50% { transform: translate(0, 25px); }
   100% { transform: translate(0, -0px); }   
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }

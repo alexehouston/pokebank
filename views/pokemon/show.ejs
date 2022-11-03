@@ -4,9 +4,10 @@
 
 <h2><%= pokeData.name %></h2>
 
+<p class="id">#<%= pokeData.pokeId %></p>
+
 <div class="pokeId">
-       <p class="id"><%= pokeData.pokeId %></p>
-        <img src="<%= pokeData.image %>">
+    <img src="<%= pokeData.image %>">
 </div>
 
 <%- include('../partials/footer') %>

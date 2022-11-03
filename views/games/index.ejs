@@ -4,47 +4,46 @@
 
 <h2>GAMES</h2>
 
+<div class="addgame">
+  <form action="/games" method="POST">
+      <select name="title">
+          <option selected>Choose Game</option>
+          <option value="Red">Red</option>
+          <option value="Blue">Blue</option>
+          <option value="Yellow">Yellow</option>
+          <option value="Gold">Gold</option>
+          <option value="Silver">Silver</option>
+          <option value="Crystal">Crystal</option>
+          <option value="Ruby">Ruby</option>
+          <option value="Sapphire">Sapphire</option>
+          <option value="Emerald">Emerald</option>
+          <option value="Diamond">Diamond</option>
+          <option value="Pearl">Pearl</option>
+          <option value="Platinum">Platinum</option>
+          <option value="Black">Black</option>
+          <option value="White">White</option>
+          <option value="X">X</option>
+          <option value="Y">Y</option>
+          <option value="Sun">Sun</option>
+          <option value="Moon">Moon</option>
+          <option value="Sword">Sword</option>
+          <option value="Shield">Shield</option>
+          <option value="Scarlet">Scarlet</option>
+          <option value="Violet">Violet</option>
+      </select>
+    <button type="submit"><p class="btnicons2">add</p></button>
+  </form>
+  </div>
+
 <div class="games">
 <% if (games.length) { %>
     <% games.forEach(function(g) { %>
-        <a href="/games/<%= g._id %>" class="games"><%= g.title %></a>
+        <a href="/games/<%= g._id %>" id="games"><%= g.title %></a>
 <% }); %>
 
 <% } else { %>
     <h3>No Games Yet</h3>
 <% } %>
-</div>
-
-<div class="addgame">
-<h3>Add Game</h3>
-<form action="/games" method="POST">
-    <select name="title">
-        <option selected>Choose Game</option>
-        <option value="Red">Red</option>
-        <option value="Blue">Blue</option>
-        <option value="Yellow">Yellow</option>
-        <option value="Gold">Gold</option>
-        <option value="Silver">Silver</option>
-        <option value="Crystal">Crystal</option>
-        <option value="Ruby">Ruby</option>
-        <option value="Sapphire">Sapphire</option>
-        <option value="Emerald">Emerald</option>
-        <option value="Diamond">Diamond</option>
-        <option value="Pearl">Pearl</option>
-        <option value="Platinum">Platinum</option>
-        <option value="Black">Black</option>
-        <option value="White">White</option>
-        <option value="X">X</option>
-        <option value="Y">Y</option>
-        <option value="Sun">Sun</option>
-        <option value="Moon">Moon</option>
-        <option value="Sword">Sword</option>
-        <option value="Shield">Shield</option>
-        <option value="Scarlet">Scarlet</option>
-        <option value="Violet">Violet</option>
-    </select>
-  <button type="submit">Add</button>
-</form>
 </div>
 
 <%- include('../partials/footer') %>
