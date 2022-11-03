@@ -317,8 +317,12 @@ h1 {
   max-width: 90%;
 }
 
+#error {
+  margin-top: -10vmin;
+}
+
 .ghost {
-  animation: floating 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 /* pokedex */
