@@ -12,41 +12,14 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #1D2026;
   font-size: 1.6vmin;
-  animation: fadeInAnimation ease 2s;
+  animation: fade ease 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-}
-
-.container, .error {
-  display: grid;
-  grid-template-columns: repeat(2, 50vw);
-  position: fixed;
-  height: 100vh;
 }
 
 h1 {
   font-size: 4vmin;
   color: white;
-}
-
-#home {
-  font-size: 6vmin;
-  height: 50%;
-}
-
-#hometext {
-  margin-top: -4vmin;
-}
-
-#pokeball {
-  position: absolute;
-  left: 33%;
-  top: 22%;
-  z-index: -5;
-}
-
-.blue {
-  color: #2196f3;
 }
 
 h2, h3 {
@@ -217,9 +190,28 @@ select {
   text-align: center;
 }
 
+/* landing page */
+
+.container, .error {
+  display: grid;
+  grid-template-columns: repeat(2, 50vw);
+  position: fixed;
+  height: 100vh;
+}
+
 .welcome, .errormsg {
   padding-left: 25vmin;
   width: 100vw;
+}
+
+.landingicon {
+  font-family: 'Material Icons';
+  position: relative;
+  top: 5px;
+}
+
+.blue {
+  color: #2196f3;
 }
 
 .login {
@@ -242,26 +234,53 @@ select {
   margin-right: 1vmin;
 }
 
+/* home page */
+
 .homepage {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.pokebank, .home {
-  position: absolute;
+  align-items: center;
 }
 
 .pokebank {
+  margin-top: 17vmin;
   text-align: center;
-  top: 25%;
-  left: 41.5%;
+  letter-spacing: -3px;
+}
+
+.home, #pokeball {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .home {
-  bottom: 3%;
-  left: 23.5%;
+  top: 70%;
 }
+
+.homeicon {
+    font-family: 'Material Icons';
+    font-size: 55px;
+    position: relative;
+    top: 5px;
+}
+
+#home {
+  font-size: 80px;
+}
+
+#hometext {
+  margin-top: -5vmin;
+  letter-spacing: normal;
+}
+
+#pokeball {
+  top: 55%;
+  z-index: -5;
+}
+
+/* pokedex entry */
 
 .id {
   text-align: center;
@@ -288,6 +307,8 @@ select {
   justify-content: center;
   align-items: center;
 }
+
+/* 404 */
 
 .pokemon, .ghost {
   width: 75vmin;
@@ -345,20 +366,22 @@ select {
   width: 100vw;
 }
 
+.menu input, .hamburger {
+  top: 9%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
 .menu input {
-  left: 47.5%;
   width: 80px;
   height: 80px;
   z-index: 20;
   opacity: 0;
-  cursor: pointer;
 }
 
 .hamburger {
-  margin-top: -8px;
-  left: 47.5%;
   z-index: 10;
-  cursor: pointer;
 }
 
 .hamburger img {
@@ -389,70 +412,42 @@ select {
   cursor: pointer; 
 }
 
-.item1 {
-  left: 2%;
+.item1 { left: 2%; }
+
+.item2 { left: 19%; }
+
+.item3 { left: 61%; }
+
+.item4 { left: 81%; }
+
+.menu input:checked ~ .navbar .navitems .item1, .item2, .item3, .item4 {
+  opacity: 1;
 }
 
-.item2 {
-  left: 19%;
-}
-
-.item3 {
-  left: 61%;
-}
-
-.item4 {
-  left: 81%;
-}
-
-.menu input:checked ~ .navbar .navitems .item1 {
-    opacity:1;
+.menu input:checked ~ .navbar .navitems .item1, .item4 {
   transition-delay:.45s;
 }
 
-.menu input:checked ~ .navbar .navitems .item2 {
-    opacity:1;
+.menu input:checked ~ .navbar .navitems .item2, .item3 {
   transition-delay:.40s;
-}
-
-.menu input:checked ~ .navbar .navitems .item3 {
-    opacity:1;
-  transition-delay:.40s;
-}
-
-.menu input:checked ~ .navbar .navitems .item4 {
-    opacity:1;
-  transition-delay:.45s;
 }
 
 /* animations */
 
-@keyframes floating {
+@keyframes float {
   0% { transform: translate(0, 0px); }
   50% { transform: translate(0, 25px); }
   100% { transform: translate(0, -0px); }   
 }
 
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-   }
+@keyframes fade {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes bounce {
-  20% {
-      transform: translateY(-6px);
-  }
-  40% {
-      transform: translateY(0px);
-  }
-  60% {
-      transform: translateY(-2px);
-  }
-  80% {
-      transform: translateY(-0px);
-  }
+  20% { transform: translateY(-6px); }
+  40% { transform: translateY(0px); }
+  60% { transform: translateY(-2px); }
+  80% { transform: translateY(-0px); }
 }

@@ -13,6 +13,7 @@
 <div class="pokeform">
     <a href="javascript:history.back()"><p class="btnicons">keyboard_backspace</p></a>
     <form action="/games/<%= gameId %>/pokemon" method="POST">
+        <input type="hidden" name="id" value="<%= pokeData.game_indices.id %>">
         <input type="hidden" name="pokeId" value="<%= pokeData.id %>">
         <input type="hidden" name="name" value="<%= pokeData.name %>">
         <input type="hidden" name="image" value="<%= pokeData.sprites.other.home.front_default %>">

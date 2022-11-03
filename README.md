@@ -1,2 +1,78 @@
-# pokebank
-A web page application where users can log &amp; store their Pokémon-related data.
+<div id="header" align="center">
+    <img src="https://i.imgur.com/ATpyX0i.png" width="800">
+</div>
+
+<div id="description" align="center">
+
+#
+
+### [CLICK TO DEMO](https://poke-bank.herokuapp.com/)
+
+##### Created by Alex E. Houston
+
+[![GitHub Badge](https://img.shields.io/github/followers/alexehouston?label=Follow&style=social)](https://www.github.com/alexehouston/)
+
+## :pencil: Description
+
+PokéBank is a web application designed to serve as a way for Pokémon game players to keep track of Pokémon they've caught as well as browse through the full Pokédex.
+
+</div>
+
+<details>
+    <summary>:art: Wireframes</summary>
+        <img src="public/images/home1.png" width="700">
+        <img src="public/images/home2.png" width="700">
+        <img src="public/images/home3.png" width="700">
+        <img src="public/images/pokedex.png" width="700">
+        <img src="public/images/details.png" width="700">
+        <img src="public/images/error.png" width="700">
+
+</details>
+
+<details>
+    <summary>:file_folder: ERD</summary>
+        <img src="public/images/erd.png" width="700">
+</details>
+
+<details>
+    <summary>:gear: Functionality</summary>
+        <h3 align="center">Login Page</h3>
+        <p align="center"><img src="" width="800"></p>
+        <h3 align="center">Home Page</h3>
+        <p align="center"><img src="" width="800"></p>
+        <h3 align="center">Pokédex</h3>
+        <p align="center"><img src=""width="800"></p>
+        <h3 align="center">Pokémon Details</h3>
+        <p align="center"><img src=""width="800"></p>
+        <h3 align="center">Games Page</h3>
+        <p align="center"><img src=""width="800"></p>
+</details>
+
+## :computer: Technologies Used
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![MarkDown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+![Express.JS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+
+## :link: Links
+
+<details>
+  <summary>Deployed Link</summary>
+  PokéBank (<a href="https://poke-bank.herokuapp.com/">https://poke-bank.herokuapp.com</a>)
+</details>
+
+## :fast_forward: Next Steps
+
+### Upcoming Features
+
+- [ ] Assign game logos to each game.
+
+- [ ] Implement a search functionality so that users can search for any Pokémon in the nav bar.
+
+- [ ] Seperate Pokémon groups (in the Pokédex) by their games and/or generation.
+
+- [ ] Add more details on individual Pokédex entries.
