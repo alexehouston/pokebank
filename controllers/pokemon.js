@@ -39,8 +39,6 @@ async function getPokedex(req, res) {
     res.render('pokemon/pokedex', { title: 'Pokédex', pokedex });
 }
 
-
-
 async function create(req, res) {
   const poke = await Pokemon.exists({pokeId:req.body.pokeId})
   if (poke) {
@@ -59,7 +57,6 @@ async function create(req, res) {
         Game.findById(req.params.id, function(err, game) {
           game.caught.push(pokemon._id);
           game.save(function(err) {
-            console.log(err, game);
             if (err) res.redirect(`/games/${game._id}`);
             res.redirect(`/games/${game._id}`);
           });

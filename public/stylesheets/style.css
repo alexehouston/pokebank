@@ -308,6 +308,36 @@ select {
   animation: floating 3s ease-in-out infinite;
 }
 
+/* pokedex */
+
+.container {
+  overflow-y: auto;
+  margin-top: -12.5vmin;
+  z-index: -1;
+}
+
+#pokedex {
+  display: grid;
+  grid-template-columns: repeat(9, 8.5vw);
+  grid-gap: 50px;
+  margin-top: 25vmin;
+}
+
+.card {
+  width: 10px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.card:hover {
+  animation: bounce 0.5s linear;
+  cursor: pointer;
+}
+
+.card-image {
+  height: 100px;
+}
+
 /* nav bar */
 
 .icons {
@@ -420,4 +450,19 @@ select {
   100% {
       opacity: 1;
    }
+}
+
+@keyframes bounce {
+  20% {
+      transform: translateY(-6px);
+  }
+  40% {
+      transform: translateY(0px);
+  }
+  60% {
+      transform: translateY(-2px);
+  }
+  80% {
+      transform: translateY(-0px);
+  }
 }
