@@ -1,5 +1,5 @@
 <div id="header" align="center">
-    <img src="https://i.imgur.com/ATpyX0i.png" width="800">
+    <img src="public/images/logo.png" width="800">
 </div>
 
 <div id="description" align="center">
@@ -20,7 +20,7 @@ PokéBank is a web application designed to serve as a way for Pokémon game play
 
 <details>
     <summary>:art: Wireframes</summary>
-        <img src="public/images/home1.png" width="700">
+        <img src="public/images/home.png" width="700">
         <img src="public/images/home2.png" width="700">
         <img src="public/images/home3.png" width="700">
         <img src="public/images/pokedex.png" width="700">
