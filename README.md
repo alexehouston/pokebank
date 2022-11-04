@@ -40,12 +40,14 @@ PokéBank is a web application designed to serve as a way for Pokémon game play
         <p align="center"><img src="public/images/screenshots/home.png" width="800"></p>
         <h3 align="center">Pokédex</h3>
         <p align="center"><img src="public/images/screenshots/pokedex.png"width="800"></p>
-        <h3 align="center">Pokémon Details</h3>
-        <p align="center"><img src="public/images/screenshots/details.png"width="800"></p>
+        <h3 align="center">Pokédex Pop-Up</h3>
+        <p align="center"><img src="public/images/screenshots/popup.png"width="800"></p>
         <h3 align="center">Games Page</h3>
         <p align="center"><img src="public/images/screenshots/games.png"width="800"></p>
         <h3 align="center">Game Details Page</h3>
         <p align="center"><img src="public/images/screenshots/gamedetails.png"width="800"></p>
+        <h3 align="center">Pokémon Details</h3>
+        <p align="center"><img src="public/images/screenshots/details.png"width="800"></p>
         <h3 align="center">Error Page</h3>
         <p align="center"><img src="public/images/screenshots/error.png"width="800"></p>
 </details>
