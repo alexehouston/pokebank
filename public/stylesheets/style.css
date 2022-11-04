@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   box-sizing: border-box;
@@ -21,18 +22,12 @@ h2, h3 {
   text-transform: uppercase;
 }
 
-h2 span {
-  margin: auto;
-  background-color: #282A30;
-  border-radius: 25px;
-  padding: 10px 25px;
-}
-
 h2 {
+  font-family: 'Lexend Zetta', sans-serif;
   text-align: center;
-  font-weight: 100;
-  color: lightgreen;
-  font-size: 45px;
+  font-weight: 600;
+  color: white;
+  font-size: 40px;
   margin-top: 10vmin;
   letter-spacing: 50px;
 }
@@ -45,10 +40,6 @@ h3 {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-h3 span {
-  
 }
 
 h4 {
@@ -69,26 +60,43 @@ a {
 
 .games {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  margin-top: 10vmin;
-  font-weight: 600;
+  grid-template-columns: repeat(5, 25vmin);
+  justify-content: center;
+  align-items: center;
+  column-gap: 25px;
+  row-gap: 50px;
+  margin-top: 15vmin;
+  font-size: 18px;
+  font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 8vmin;
-  font-size: 2vmin;
   text-align: center;
   transition: all .2s ease-in-out;
 }
 
 #games {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #282A30;
+  background-size: contain;
+  width: 300px;
+  height: 50px;
+  border-radius: 50px;
   color: white;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.1), 0 15px 12px rgba(0,0,0,0.1);
+  
 }
 
 #games:hover {
-  color: #2196f3;
   font-weight: 700;
   transition: all .2s ease-in-out;
-  transform: scale(1.1); 
+  transform: scale(1.1);
+  color: lightblue;
+  text-shadow:0px 0px 30px lightblue;
+  transition: all 0.2s ease-in;
 }
 
 select {
@@ -126,7 +134,7 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 8vmin;
+  margin-top: 6vmin;
 }
 
 .caught {
@@ -151,8 +159,10 @@ select {
 }
 
 .delete {
-  width: 150px;
   margin: auto;
+  position: absolute;
+  bottom: 5px;
+  left: 48%;
 }
 
 input, button {
@@ -215,8 +225,8 @@ h1 {
 
 .login {
   color: #222;
-  background: #fff;
-  border: solid 1px #eee;
+  background: white;
+  border: solid 1px white;
   border-radius: 50px;
   padding: 1.5vmin;
   display: flex;
