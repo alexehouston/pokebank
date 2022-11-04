@@ -101,20 +101,26 @@ a {
 
 select {
   font-family: 'Poppins';
+  background-color: #282A30;
   width: 250px;
   height: 30px;
   color: grey;
   text-align: center;
   margin-top: 2vmin;
   border-radius: 10px;
+  border: none;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.1), 0 15px 12px rgba(0,0,0,0.1);
 }
 
 input[type=text] {
+  background-color: #282A30;
   width: 250px;
   height: 30px;
   color: grey;
   border-radius: 10px;
   border: none;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.1), 0 15px 12px rgba(0,0,0,0.1);
+
 }
 
 .btnicons {
@@ -122,11 +128,11 @@ input[type=text] {
   margin-top: 5vmin;
   font-family: 'Material Icons';
   font-size: 50px;
-  color: white;
+  color: lightgrey;
 }
 
 .btnicons:hover, .btnicons2:hover {
-  color: #2196f3;
+  color: white;
   transition: all .2s ease-in-out;
   transform: scale(1.2);
 }
@@ -135,7 +141,7 @@ input[type=text] {
   position: absolute;
   margin-top: -25px;
   font-family: 'Material Icons';
-  color: white;
+  color: grey;
   font-size: 40px;
 }
 
@@ -163,10 +169,12 @@ input[type=text] {
 .caught img {
   transition: all .2s ease-in-out;
   width: 45%;
+  filter: drop-shadow(0 0 1rem rgba(0,0,0,0.7));
 }
 
 .caught img:hover {
   animation: bounce 0.5s linear;
+  filter: drop-shadow(0 0 1rem grey);
 }
 
 .addgame {
@@ -351,6 +359,10 @@ h1 {
   align-items: center;
 }
 
+.pokeId img {
+  filter: drop-shadow(0 0 1.5rem rgba(0,0,0,0.5));
+}
+
 .pokeform {
   display: flex;
   flex-direction: row;
@@ -377,10 +389,12 @@ h1 {
   width: 10px;
   margin: 0 auto;
   list-style: none;
+  filter: drop-shadow(0 0 1rem rgba(0,0,0,0.7));
 }
 
 .card:hover {
   animation: bounce 0.5s linear;
+  filter: drop-shadow(0 0 1rem grey);
   cursor: pointer;
 }
 
