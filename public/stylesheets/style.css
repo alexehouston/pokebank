@@ -101,10 +101,20 @@ a {
 
 select {
   font-family: 'Poppins';
-  width: 200px;
+  width: 250px;
+  height: 30px;
   color: grey;
   text-align: center;
   margin-top: 2vmin;
+  border-radius: 10px;
+}
+
+input[type=text] {
+  width: 250px;
+  height: 30px;
+  color: grey;
+  border-radius: 10px;
+  border: none;
 }
 
 .btnicons {
