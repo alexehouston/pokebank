@@ -137,16 +137,22 @@ select {
   margin-top: 6vmin;
 }
 
+.caughtcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7vmin;
+}
+
 .caught {
   display: grid;
-  grid-template-columns: repeat(12, 8.33vw);
-  row-gap: 40px;
-  padding: 75px;
+  grid-template-columns: repeat(12, 15rem);
+  row-gap: 45px;
 }
 
 .caught img {
   transition: all .2s ease-in-out;
-  width: 35%;
+  width: 45%;
 }
 
 .caught img:hover {

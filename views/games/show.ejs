@@ -13,16 +13,18 @@
     </div>
 </div>
 
-<div class="caught">
-    <% if (game.caught.length) { %>
-        <% game.caught.forEach(function(p) { %>
-            <a id="caughtpoke" href="/pokemon/<%= p._id %>"><img src="<%= p.image %>"></a>
-    <% }); %>
-    
-    <% } else { %>
-        <h3>No Pokémon Yet</h3>
-    <% } %>
-</div>
+<div class="caughtcontainer">
+    <div class="caught">
+        <% if (game.caught.length) { %>
+            <% game.caught.forEach(function(p) { %>
+                <a id="caughtpoke" href="/pokemon/<%= p._id %>"><img src="<%= p.image %>"></a>
+        <% }); %>
+        
+        <% } else { %>
+            <h3>No Pokémon Yet</h3>
+        <% } %>
+    </div>
+</div>  
 
 <div class="delete">
     <form action="/games/<%= game._id %>?_method=DELETE" method="POST">
