@@ -46,6 +46,7 @@ async function create(req, res) {
       let pokeInArr = game.caught.some(id => id.equals(poke._id));
       if (pokeInArr) return res.redirect(`/games/${game._id}`);
       game.caught.push(poke._id);
+      console.log(err);
       game.save(function(err) {
         if (err) res.redirect(`/games/${game._id}`);
           res.redirect(`/games/${game._id}`);
