@@ -63,8 +63,13 @@ PokéBank is a web application designed to serve as a way for Pokémon game play
 ## :link: Links
 
 <details>
+  <summary>Trello Board</summary>
+  <a href="https://trello.com/b/BQduroZp/pok%C3%A9bank">Click here!</a>
+</details>
+
+<details>
   <summary>Deployed Link</summary>
-  PokéBank (<a href="https://poke-bank.herokuapp.com/">https://poke-bank.herokuapp.com</a>)
+  <a href="https://poke-bank.herokuapp.com/">PokéBank</a>
 </details>
 
 ## :fast_forward: Next Steps
