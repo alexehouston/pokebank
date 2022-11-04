@@ -19,7 +19,13 @@ body {
 
 h2, h3 {
   text-transform: uppercase;
-  color: white;
+}
+
+h2 span {
+  margin: auto;
+  background-color: #282A30;
+  border-radius: 25px;
+  padding: 10px 25px;
 }
 
 h2 {
@@ -27,13 +33,22 @@ h2 {
   font-weight: 100;
   color: lightgreen;
   font-size: 45px;
-  letter-spacing: 3vmin;
   margin-top: 10vmin;
+  letter-spacing: 50px;
 }
 
 h3 {
-  font-size: 20px;
+  color: #282A30;
+  font-size: 80px;
   font-weight: 500;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h3 span {
+  
 }
 
 h4 {
@@ -50,11 +65,13 @@ a {
   text-decoration: none;
 }
 
+/* games + games/show page */
+
 .games {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   margin-top: 10vmin;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 8vmin;
@@ -70,14 +87,38 @@ a {
 #games:hover {
   color: #2196f3;
   font-weight: 700;
+  transition: all .2s ease-in-out;
   transform: scale(1.1); 
 }
 
-#games:hover {
-  background-image: url('https://i.imgur.com/LN1ezpL.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 10%;
+select {
+  font-family: 'Poppins';
+  width: 200px;
+  color: grey;
+  text-align: center;
+  margin-top: 2vmin;
+}
+
+.btnicons {
+  text-align: center;
+  margin-top: 5vmin;
+  font-family: 'Material Icons';
+  font-size: 50px;
+  color: white;
+}
+
+.btnicons:hover, .btnicons2:hover {
+  color: #2196f3;
+  transition: all .2s ease-in-out;
+  transform: scale(1.2);
+}
+
+.btnicons2 {
+  position: absolute;
+  margin-top: -25px;
+  font-family: 'Material Icons';
+  color: white;
+  font-size: 40px;
 }
 
 .addpokemon {
@@ -90,19 +131,18 @@ a {
 
 .caught {
   display: grid;
-  grid-template-columns: repeat(10, 10vw);
-  row-gap: 35px;
-  padding: 50px;
+  grid-template-columns: repeat(12, 8.33vw);
+  row-gap: 40px;
+  padding: 75px;
 }
 
 .caught img {
   transition: all .2s ease-in-out;
-  width: 50%;
-  padding: -2vmin;
+  width: 35%;
 }
 
 .caught img:hover {
-  transform: scale(1.1);
+  animation: bounce 0.5s linear;
 }
 
 .addgame {
@@ -110,31 +150,9 @@ a {
   left: 48%;
 }
 
-.addpokemon, .addteam {
-  position: absolute;
-  text-align: center;
-  bottom: 15%;
-  left: 48%;
-}
-
-.pokedex {
-  display: grid;
-  grid-template-columns: repeat(6, 15vw);
-  background-color:white;
-  margin: 10vmin 20vmin 0 20vmin;
-  padding: 5vmin;
-}
-
-.welcome, .pokemon, .errormsg, .ghost {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .delete {
-  position: absolute;
-  bottom: 5%;
-  left: 48%
+  width: 150px;
+  margin: auto;
 }
 
 input, button {
@@ -158,39 +176,18 @@ button:hover {
   cursor: pointer;
 }
 
-.btnicons {
-  margin-top: 5vmin;
-  font-family: 'Material Icons';
-  font-size: 50px;
-  color: white;
-  letter-spacing: 50px;
-}
-
-.btnicons:hover {
-  color: #2196f3;
-  transition: all .2s ease-in-out;
-  transform: scale(1.2);
-}
-
-.btnicons2 {
-  font-family: 'Material Icons';
-  color: white;
-  font-size: 25px;
-}
-
-select {
-  font-family: 'Poppins';
-  width: 250px;
-  color: grey;
-  text-align: center;
-}
-
-/* landing page */
+/* landing and error page */
 
 h1 {
   font-size: 5vmin;
   color: white;
   letter-spacing: -1px;
+}
+
+.welcome, .pokemon, .errormsg, .ghost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .container, .error {
@@ -234,6 +231,19 @@ h1 {
 .login img {
   width: 3vmin;
   margin-right: 1vmin;
+}
+
+.pokemon, .ghost {
+  width: 75vmin;
+  max-width: 90%;
+}
+
+#error {
+  margin-top: -10vmin;
+}
+
+.ghost {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* home page */
@@ -284,12 +294,24 @@ h1 {
 
 /* pokedex entry */
 
-.id {
+.id, .type {
   text-align: center;
-  font-size: 50px;
+  text-transform: uppercase;
+}
+
+.id {
+  font-size: 75px;
   font-weight: 100;
-  opacity: 50%;
-  z-index: 10;
+}
+
+.type {
+  margin-top: -5vmin;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .pokeId {
@@ -308,21 +330,6 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-/* 404 */
-
-.pokemon, .ghost {
-  width: 75vmin;
-  max-width: 90%;
-}
-
-#error {
-  margin-top: -10vmin;
-}
-
-.ghost {
-  animation: float 3s ease-in-out infinite;
 }
 
 /* pokedex */

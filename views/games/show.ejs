@@ -2,7 +2,16 @@
 
 <%- include('../partials/nav') %>
 
-<h2><%= game.title %></h2>
+<h2><span>&nbsp;<%= game.title %></span></h2>
+
+<div class="add">
+    <div class="addpokemon">
+        <form action="/games/<%= game._id %>/pokemon" method="GET">
+                <input type="text" name="pokemon" class="form-control" placeholder="Enter a Pokémon Name" required>
+                <button class="submit" type="submit"><p class="btnicons2">catching_pokemon</p></button>
+        </form>
+    </div>
+</div>
 
 <div class="caught">
     <% if (game.caught.length) { %>
@@ -13,14 +22,6 @@
     <% } else { %>
         <h3>No Pokémon Yet</h3>
     <% } %>
-
-    <div class="add">
-        <div class="addpokemon">
-            <form action="/games/<%= game._id %>/pokemon" method="GET">
-                    <input type="text" name="pokemon" class="form-control" placeholder="Enter a Pokémon Name" required>
-                    <button class="submit" type="submit"><p class="btnicons2">catching_pokemon</p></button>
-            </form>
-        </div>
 </div>
 
 <div class="delete">

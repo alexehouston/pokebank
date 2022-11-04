@@ -39,8 +39,6 @@ async function getPokedex(req, res) {
     res.render('pokemon/pokedex', { title: 'Pokédex', pokedex });
 }
 
-// const pokedex = document.getElementById('pokedex');
-
 // const fetchPokemon = async () => {
 //     const url = `https://pokeapi.co/api/v2/pokemon?limit=905`;
 //     const res = await fetch(url);
@@ -58,8 +56,6 @@ async function getPokedex(req, res) {
 //     `<li class="card"><a href="/pokemon/${pokemon.id}"><img class="card-image" src="${pokemon.image}"/></a></li>`).join('');
 //     pokedex.innerHTML = pokemonHTMLString;
 // };
-
-// fetchPokemon();
 
 async function create(req, res) {
   const poke = await Pokemon.exists({pokeId:req.body.pokeId})

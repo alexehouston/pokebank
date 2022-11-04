@@ -2,9 +2,10 @@
 
 <%- include('../partials/nav') %>
 
-<h2><%= pokeData.name %></h2>
+<h2><span>&nbsp;<%= pokeData.name %></span></h2>
 
 <p class="id">#<%= pokeData.pokeId %></p>
+<p class="type">Type | <span class="bold"><%= pokeDatatype %></span></p>
 
 <div class="pokeId">
     <img src="<%= pokeData.image %>">

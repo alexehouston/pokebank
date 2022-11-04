@@ -2,9 +2,10 @@
 
 <%- include('../partials/nav') %>
 
-<h2><%= pokeData.name %></h2>
+<h2><span>&nbsp;<%= pokeData.name %></span></h2>
 
 <p class="id">#<%= pokeData.id %></p>
+<p class="type">Type | <span class="bold"><%= pokeData.types[0].type.name %></span></p>
 
 <div class="pokeId">
     <img src="<%= pokeData.sprites.other.home.front_default %>">
@@ -12,10 +13,12 @@
 
 <div class="pokeform">
     <a href="javascript:history.back()"><p class="btnicons">keyboard_backspace</p></a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <form action="/games/<%= gameId %>/pokemon" method="POST">
         <input type="hidden" name="pokeId" value="<%= pokeData.id %>">
         <input type="hidden" name="name" value="<%= pokeData.name %>">
         <input type="hidden" name="image" value="<%= pokeData.sprites.other.home.front_default %>">
+        <input type="hidden" name="type" value="<%= pokeData.types[0].type.name %>">
     <button class="submit" type="submit"><p class="btnicons">add</p></button>
     </form>
 </div>

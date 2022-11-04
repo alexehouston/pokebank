@@ -11,6 +11,9 @@ const pokemonSchema = new Schema({
   },
   image: {
     type: String
+  },
+  type: {
+    type: Object
   }
 });
 
