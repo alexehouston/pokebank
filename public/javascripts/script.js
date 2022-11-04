@@ -8,15 +8,52 @@ const fetchPokemon = async () => {
     const pokemon = data.results.map((data, index) => ({
         name: data.name,
         id: index + 1,
-        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${index + 1}.png`
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${index +
+            1}.png`
     }));
+
     displayPokemon(pokemon);
 };
 
 const displayPokemon = (pokemon) => {
-    const pokemonHTMLString = pokemon.map((pokemon) => 
-    `<li class="card"><a href="/pokemon/${pokemon.id}"><img class="card-image" src="${pokemon.image}"/></a></li>`).join('');
+    const pokemonHTMLString = pokemon.map((pokeman) =>
+        `<li class="card" onclick="selectPokemon(${pokeman.id})">
+        <img class="card-image" src="${pokeman.image}"/></a></li>`).join('');
     pokedex.innerHTML = pokemonHTMLString;
+};
+
+const selectPokemon = async (id) => {
+    if (!cachedPokemon[id]) {
+        const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+        const res = await fetch(url);
+        const pokeman = await res.json();
+        cachedPokemon[id] = pokeman;
+        displayPokemanPopup(pokeman);
+    } else {
+        displayPokemanPopup(cachedPokemon[id]);
+    }
+};
+
+const displayPokemanPopup = (pokeman) => {
+    console.log(pokeman);
+    const type = pokeman.types.map((type) => type.type.name).join(', ');
+    const htmlString = `
+        <div class="popup">
+            <button id="closeBtn" onclick="closePopup()">Close</button>
+            <div class="popupcard">
+                <img id ="cardimg" src="${pokeman.sprites.other.home['front_default']}"/>
+                <h2 class="card-title">${pokeman.name}</h2>
+                <p class="id">#${pokeman.id}</p>
+                <p class="type">Type | <span class="bold">${pokeman.types[0].type.name}</span></p>
+            </div>
+        </div>`;
+
+    pokedex.innerHTML = htmlString + pokedex.innerHTML;
+};
+
+const closePopup = () => {
+    const popup = document.querySelector('.popup');
+    popup.parentElement.removeChild(popup);
 };
 
 fetchPokemon();
