@@ -43,10 +43,10 @@ async function create(req, res) {
   const poke = await Pokemon.exists({pokeId:req.body.pokeId})
   if (poke) {
     Game.findById(req.params.id, function(err, game) {
-      let pokeInArr = game.caught.some(id => id.equals(poke._id));
+      let pokeInArr = game.caught.some(id => id === poke._id)
       if (pokeInArr) return res.redirect(`/games/${game._id}`);
       game.caught.push(poke._id);
-      console.log(err);
+      console.log(err, game);
       game.save(function(err) {
         if (err) res.redirect(`/games/${game._id}`);
           res.redirect(`/games/${game._id}`);
