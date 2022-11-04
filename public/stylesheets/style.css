@@ -179,7 +179,7 @@ button:hover {
 /* landing and error page */
 
 h1 {
-  font-size: 5vmin;
+  font-size: 6vmin;
   color: white;
   letter-spacing: -1px;
 }
@@ -204,7 +204,7 @@ h1 {
 
 .landingicon {
   font-family: 'Material Icons';
-  font-size: 45px;
+  font-size: 55px;
   position: relative;
   top: 5px;
 }
