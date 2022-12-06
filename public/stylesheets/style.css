@@ -49,7 +49,8 @@ h4 {
 }
 
 p {
-  margin-top: 1vmin;
+  margin-top: -1vmin;
+  font-size: 1vw;
   color: #aaa;
 }
 
@@ -214,14 +215,15 @@ button:hover {
 /* landing and error page */
 
 h1 {
-  font-size: 6vmin;
+  font-size: 3vw;
   color: white;
   letter-spacing: -1px;
 }
 
-.welcome, .pokemon, .errormsg, .ghost {
+.welcome, .errormsg {
   display: flex;
   flex-direction: column;
+  grid-template-columns: auto auto;
   justify-content: center;
 }
 
@@ -229,19 +231,21 @@ h1 {
   display: grid;
   grid-template-columns: repeat(2, 50vw);
   position: fixed;
+  width: 100vmin;
   height: 100vh;
+
 }
 
 .welcome, .errormsg {
-  padding-left: 25vmin;
   width: 100vw;
+  padding: 10vw;
 }
 
 .landingicon {
   font-family: 'Material Icons';
-  font-size: 55px;
+  font-size: 2vw;
   position: relative;
-  top: 5px;
+  top: .1vw;
 }
 
 .blue {
@@ -249,7 +253,8 @@ h1 {
 }
 
 .login {
-  color: #222;
+  color: #222222;
+  font-size: 1vw;
   background: white;
   border: solid 1px white;
   border-radius: 50px;
@@ -259,18 +264,25 @@ h1 {
   align-items: center;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   text-decoration: none;
-  width: 38vmin;
+  width: 20vw;
+  height: 3vw;
   cursor: pointer;
 }
 
 .login img {
-  width: 3vmin;
+  width: 2vw;
   margin-right: 1vmin;
 }
 
 .pokemon, .ghost {
-  width: 75vmin;
-  max-width: 90%;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.pokemon img, .ghost img {
+  width: 40%;
 }
 
 #error {
@@ -304,6 +316,10 @@ h1 {
 
 .home {
   top: 70%;
+}
+
+.home img {
+  width: 65vw;
 }
 
 .homeicon {
@@ -547,4 +563,113 @@ button:hover {
   40% { transform: translateY(0px); }
   60% { transform: translateY(-2px); }
   80% { transform: translateY(-0px); }
+}
+
+/* mobile-friendly css */
+
+@media screen and (max-width: 850px) {
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+  }
+
+  .welcome p {
+    font-size: 20px;
+  }
+
+  a.login {
+    font-size: 20px;
+  }
+
+  .login img {
+    width: 30px;
+  }
+  
+  .pokemon, .ghost {
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+  }
+
+  .pokemon img, .ghost img {
+    width: 80vmin;
+  }
+
+  .welcome h1 {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  span.landingicon {
+    font-size: 26px;
+    position: relative;
+    top: 3px;
+  }
+
+  .welcome p {
+    text-align: center;
+  }
+
+  .login {
+    width: 50vw;
+    height: 10vw;
+  }
+
+  a.login {
+    font-size: 15px;
+  }
+
+  .login img {
+    width: 25px;
+  }
+
+  h1#home {
+    font-size: 55px;
+  }
+
+  p#hometext {
+    font-size: 15px;
+  }
+
+  span.homeicon {
+    font-size: 40px;
+    position: relative;
+    top: 4px;
+  }
+
+  .home img {
+    width: 1100px;
+  }
+
+  .hamburger img {
+    width: 100px;
+  }
+
+  .navbar {
+    margin-top: 35px;
+    height: 70px;
+    width: 80%;
+  }
+
+  .navitems span {
+    top: 15px;
+    padding-left: 12px;
+  }
+
+  .icons {
+    font-size: 30px;
+  }
+  
+  .item2 { left: 16%; }
+  
+  .item3 { left: 65%; }
 }

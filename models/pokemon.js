@@ -13,7 +13,7 @@ const pokemonSchema = new Schema({
     type: String
   },
   type: {
-    type: Object
+    type: String
   }
 });
 
